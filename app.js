@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
-app.use('/api', userRoutes);
+app.use('/api', authRoutes);
 
 
 const port = process.env.PORT || 8000;
